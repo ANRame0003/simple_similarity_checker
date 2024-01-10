@@ -1,0 +1,25 @@
+CONTS = {
+        "you'll": "you will",
+        "won't": "will not",
+        "I'm": "I am",
+        "you're": "you are",
+        "he's": "he is",
+        "she's": "she is",
+        "it's": "it is",
+        "we're": "we are",
+        "they're": "they are",
+        "I'll": "I will",
+        "you'll": "you will",
+        "he'll": "he will",
+        "she'll": "she will",
+        "it'll": "it will",
+        "we'll": "we will",
+        "they'll": "they will",
+        "I've": "I have",
+        "you've": "you have",
+        "we've": "we have",
+        "they've": "they have",
+        "don't": "do not",
+        "can't": "cannot"
+    }
+
