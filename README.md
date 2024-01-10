@@ -54,7 +54,7 @@ sudo docker build -t scorer .
 ```
 The above command brings up one image. The below command is used to build the container which will be deploying the flask-app in Kubernetes pods and EC2 environments. 
 ```bash
-sudo docker run scorer
+docker run -p 3005:3005 -d scorer 
 ```
 This container is a flask app system that is designed to take API calls via tools such as postman. Once the container is up and running, it is ready to recieve API calls via postman. 
 
