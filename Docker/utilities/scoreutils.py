@@ -1,5 +1,6 @@
 from abbreviations import CONTS
 from stopwords import stopwords
+import string
 
 def _get_bow(sentences, stw = True, abbs = True):
 
@@ -9,6 +10,7 @@ def _get_bow(sentences, stw = True, abbs = True):
   for j in sentences:
     st = set()
     for k in (j.lower().split()):
+      k = k.translate(str.maketrans('', '', string.punctuation))
       if stw:
         if k in stopwords:
           continue
