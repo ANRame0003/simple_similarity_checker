@@ -21,7 +21,7 @@ def compare_sents():
     bow = _get_bow(sentences, stw = False, abbs = False) 
     # Separate fn for scoring to change mechanism later
     score = _get_scores(bow) 
-    return Response(f"Score is {round(score, 2) * 100}", 201)
+    return Response(f"Score is {round(score, 2)}", 201)
   except Exception as e:
      return Response(f"Failed due to error {e}", 500)
 
