@@ -36,13 +36,13 @@ This Similarity checker is built as a part of a take-home assignment for the pos
 In the creation of the program, here are a number of conscious assumptions that were made to support the project:
 1. Punctuations need to be removed as they do not provide much value in the current use case.
 2. We only take into account the count of common words between the two sentences to understand the similarity. To improve the model further, we will need to utilize word embeddings/word vectors to represent the meanings and thus classify words based on the meaning. 
-3. In case of not using any of the NLP libraries, we will not be able to implement context-based awareness as the words have no numerical representation. Even if we utilize one-hot encoding, we will be utilizing large amounts of time and space to calculate the values. 
-4.Since context is not taken into consideration in our case, we will be using Jaccard's similarity index which is independent of use of word embeddings.
+3. In case of not using any of the NLP libraries, we will not be able to implement context-based awareness as the words have no numerical representation. Even if we utilize one-hot encoding, we will be utilizing large amounts of time and space to calculate the values.
+4. Since context is not taken into consideration in our case, we will be using Jaccard's similarity index which is independent of use of word embeddings.
 5. We can utilize dictionaries and sets to keep track of words per sentence and sentence related stats as well.
 
 --------
 ## How to run:
-###prerequisites to run container:
+### Prerequisites to run container:
 * MacOS Terminal
 * Docker desktop
 * Github repo should be cloned into system
@@ -74,6 +74,23 @@ Where:
 * C is the total number of unique words and
 * T is the total number of words from both the sentences.
 
+--------
+## API calls:
+To test the microservice, the following URL needs to be used:
+```bash
+http://0.0.0.0:3005/similarity-scores
+```
+The payload to be provided is as follows
+```json
+{
+    "sentences": [<Sentence 1>, <Sentence 2>]
+}
+```
+After testing the example sentences using the above method, we were able to get scores as follows:
+|Sentences |Similarity Score |
+|---------------  |---------------|
+|Sentence 1 and 2 |  0.63        |
+|Sentence 1 and 3 |  0.19        |
 --------
 ## Future Optimizations:
 1. Utilizing word embeddings to club similar words together. This allows us to utilize other scoring mechanisms such as cosine distance and TF-IDF.
