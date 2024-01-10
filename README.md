@@ -2,7 +2,7 @@
 -------
 ### By Abilash Ramesh
 --------
-### Table Structure:
+### File Structure:
 ```bash
 .
 ├── COLLABORATORS
