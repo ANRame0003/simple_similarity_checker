@@ -25,14 +25,23 @@
 ### Contents:
 
 * Introduction
+* Assumptions
 * How to run?
-* Available flags
 * Workings of scoring system
 * Future optimizations
 
 ---------
 ## Introduction:
 This Similarity checker is built as a part of a take-home assignment for the position of Machine learning engineer at Fetch. The similarity checker is designed to take in 2 sentences, remove stopwords and expand abbreviations, get the count of unique words within the given sentence and derive a score based on that. 
+
+--------
+## Assumptions:
+In the creation of the program, here are a number of conscious assumptions that were made to support the project:
+1. Punctuations need to be removed as they do not provide much value in the current use case.
+2. We only take into account the count of common words between the two sentences to understand the similarity. To improve the model further, we will need to utilize word embeddings/word vectors to represent the meanings and thus classify words based on the meaning. 
+3. In case of not using any of the NLP libraries, we will not be able to implement context-based awareness as the words have no numerical representation. Even if we utilize one-hot encoding, we will be utilizing large amounts of time and space to calculate the values. 
+4.Since context is not taken into consideration in our case, we will be using Jaccard's similarity index which is independent of use of word embeddings.
+5. We can utilize dictionaries and sets to keep track of words per sentence and sentence related stats as well.
 
 --------
 ## How to run:
@@ -52,8 +61,7 @@ sudo docker run scorer
 ```
 This container is a flask app system that is designed to take API calls via tools such as postman. Once the container is up and running, it is ready to recieve API calls via postman. 
 
-----------
-## Available flags:
+### Available flags:
 There are only 2 available flags as of now. These are 
 1. ```abbreviate```to ignore expansion of concatenated words and
 2. ```stopwords```to ignore stopwords
@@ -61,4 +69,14 @@ Both of the above flags are set to ```True``` by default
 
 ---------
 ## Workings of scoring system
-We have utilized Jaccard Index to measure ther similarity of sentences. This involves
+We have utilized Jaccard Index to measure ther similarity of sentences. This involves utilizing the common words in both the sentences and calculate the frequency of common words vs all words in the sentence. The formula for this is: 
+
+$` {C\over T} `$ 
+
+Where:
+* C is the total number of unique words and
+* T is the total number of words from both the sentences.
+
+--------
+## Future Optimizations:
+1. Utilizing 
