@@ -15,10 +15,7 @@
 │       ├── abbreviations.py
 │       ├── scoreutils.py
 │       └── stopwords.py
-├── README.md
-├── setup.py
-└── testcases
-    └── pytest.py
+└── README.md
 
 ```
 ----------
