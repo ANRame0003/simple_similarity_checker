@@ -76,4 +76,6 @@ Where:
 
 --------
 ## Future Optimizations:
-1. Utilizing 
+1. Utilizing word embeddings to club similar words together. This allows us to utilize other scoring mechanisms such as cosine distance and TF-IDF.
+2. Handling large-scale loads by using Gunicorn for multi-threading since Flask app allows only for one request at a time.
+3. Utilizing server-side caching for better performance monitoring and logging.
