@@ -29,7 +29,7 @@
 
 ---------
 ## Introduction:
-This Similarity checker is built as a part of a take-home assignment for the position of Machine learning engineer at Fetch. The similarity checker is designed to take in 2 sentences, remove stopwords and expand abbreviations, get the count of unique words within the given sentence and derive a score based on that. 
+This Similarity checker is built as a part of a take-home assignment for the position of Machine learning engineer at Fetch. The similarity checker is designed to take in 2 sentences, remove stopwords and expand abbreviations (both of which are not derived using NLTK, SpaCy or any other extra packages), get the count of unique words within the given sentence and derive a score based on that. 
 
 --------
 ## Assumptions:
